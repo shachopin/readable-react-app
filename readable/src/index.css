@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+div#root {
+  margin-top:40px;
+}
+
+ul#postslist {
+  clear: both;
+}
+
+div.posts {
+  margin-top: -34px;
+  /*if you use relative postion, it will then cover the categories ui, so clicking on categories nothing happen
+  need to use z-index to fix that */
+}
