@@ -11,7 +11,6 @@ const Root = (props) => (
     <BrandingBar pathname={props.location.pathname} />
     <div id="root">
       <Switch>
-        {/*the more specific onces should go top*/}
         <Route path="/posts/new" component={CreatePost} />
         <Route path="/:category/:id/edit" component={EditPost} />
         <Route path="/:category/:id" component={PostDetail} />

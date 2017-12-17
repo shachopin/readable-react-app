@@ -19,25 +19,7 @@ const logger = store => next => action => {
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-/*
-So `composeEnhancers` will either be `window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__` or `compose`
 
-
-[8:13] 
-I’m only guessing here, but `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__` is probably a compose-function, set by redux if `dev` is true.
-
-
-[8:13] 
-(and redux exists) (edited)
-
-
-Harsh Patel [8:17 AM] 
-@RK_M I think that too, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__ might be like window.__REDUX_DEVTOOLS_EXTENSION__ ? compose(__REDUX_DEVTOOLS_EXTENSION_) : false
-
-
-[8:17] 
-Thanks!
-*/
 const store = createStore(
   reducer,
   composeEnhancers(
@@ -48,7 +30,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>  
-      <div>{/* BrowserRouter can only allow one child */}
+      <div>
         <Route path="/" component={Root}/>
       </div>
     </BrowserRouter>
